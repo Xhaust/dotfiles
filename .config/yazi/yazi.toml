@@ -1,16 +1,6 @@
 [mgr]
 show_hidden = true
 
-[open]
-rules = [
-	{ mime = "application/pdf", use = [ "pdff", "reveal" ] },
-	]
-
-[opener]
-pdff = [
-	{ run = 'zathura "$@"', desc = "zathura", block = false, orphan = true, for = "unix" },
-	]
-
 [plugin]
 prepend_preloaders = [
     # Office Documents
