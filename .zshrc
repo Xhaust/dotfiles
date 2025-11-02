@@ -24,3 +24,6 @@ function y() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+
+# ssh-agent plugin
+plugins=(git ssh-agent)
