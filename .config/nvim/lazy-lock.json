@@ -1,6 +1,7 @@
 {
   "lazy.nvim": { "branch": "main", "commit": "202d8e92b3a74ac88eb3a7f1e40fb59b4c2a6535" },
   "mini.nvim": { "branch": "main", "commit": "f545dcc3831ffcf1f15c708bbc63bac29fcef2d5" },
+  "nvim-treesitter": { "branch": "main", "commit": "65a266bf693d3fc856dd341c25edea1a0917a30f" },
   "nvim-web-devicons": { "branch": "master", "commit": "8dcb311b0c92d460fac00eac706abd43d94d68af" },
   "tokyonight.nvim": { "branch": "main", "commit": "b13cfc1286d2aa8bda6ce137b79e857d5a3d5739" }
 }
