@@ -11,7 +11,6 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-
 # Set default editor
 export EDITOR=nvim
 export VISUAL=nvim
@@ -25,5 +24,5 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-# ssh-agent plugin
-plugins=(git ssh-agent)
+# Environment variable for ssh-agent socket
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
