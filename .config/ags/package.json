@@ -1,0 +1,7 @@
+{
+  "name": "ags-shell",
+  "private": true,
+  "devDependencies": {
+    "ags": "github:aylur/ags"
+  }
+}
