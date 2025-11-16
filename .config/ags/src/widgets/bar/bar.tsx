@@ -22,8 +22,16 @@ export default function Bar() {
 	visible 
 	anchor={TOP | LEFT | RIGHT}
       >
-        <label label={clock} />
-	<BatteryLabel />
+	<centerbox>
+	    <box $type="start">
+	    </box>
+	    <box $type="center">
+		<label label={clock} />
+	    </box>
+	    <box $type="end">
+		<BatteryLabel />
+	    </box>
+	</centerbox>
       </window>
     )
 }
