@@ -6,13 +6,8 @@ import Battery from "gi://AstalBattery"
 const clock = createPoll("", 1000, "date")
 
 function BatteryLabel(){
-    const battery = Battery.get_default()
-    const percent = createBinding(
-	battery, "percentage", 
-    )((p) => `${Math.floor(p * 100)}%`)
-    return (
-	<label label={percent}/>
-    )
+    const percentage = createBinding(Battery.get_default(), "percentage")
+    return <label label={percentage((p) => `${Math.round(p * 100)}%`)} />
 }
 
 export default function Bar() {
