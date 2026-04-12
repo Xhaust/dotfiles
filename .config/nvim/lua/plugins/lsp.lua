@@ -18,5 +18,13 @@ return {
       require("mason-lspconfig").setup({
 	ensure_installed = {"lua_ls", "pyright", "clangd", "ts_ls"}
       })
+
+      vim.diagnostic.config({
+        virtual_text = true,
+        signs = true,
+	underline = true,
+        update_in_insert = true,
+	severity_sort = true
+      })
   end
 }
