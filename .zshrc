@@ -15,6 +15,9 @@ compinit
 export EDITOR=nvim
 export VISUAL=nvim
 
+# Setup zoxide
+eval "$(zoxide init zsh)"
+
 # yazi wrapper
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
