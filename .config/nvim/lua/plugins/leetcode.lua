@@ -9,5 +9,8 @@ return {
       picker = {
         provider = "snacks-picker"
       },
+      storage = {
+        home = vim.fn.expand("~/projects/myrepos/leetcode-solutions"),
+      }
     }
 }
