@@ -6,6 +6,7 @@ return {
         "MunifTanjim/nui.nvim",
     },
     opts = {
+      lang = "python3",
       picker = {
         provider = "snacks-picker"
       },
