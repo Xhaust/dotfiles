@@ -1,31 +1,27 @@
 return {
   'neovim/nvim-lspconfig',
   dependencies = {
-      { 'mason-org/mason.nvim', config = true },
+    { 'mason-org/mason.nvim', config = true },
     'mason-org/mason-lspconfig.nvim',
-    {
-      'folke/lazydev.nvim',
-      ft = 'lua',
-      opts = {
-        library = {
-        { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
-	{ path = "snacks.nvim", words = { "Snacks" } },
-        },
-      },
-     }
- },
+  },
   config = function()
-      require("mason").setup()
-      require("mason-lspconfig").setup({
-	ensure_installed = {"lua_ls", "pyright", "clangd", "ts_ls"}
-      })
+    local servers = { "lua_ls", "basedpyright", "ruff", "clangd", "ts_ls" }
 
-      vim.diagnostic.config({
-        virtual_text = true,
-        signs = true,
-	underline = true,
-        update_in_insert = true,
-	severity_sort = true
-      })
+    require("mason").setup()
+    require("mason-lspconfig").setup({ ensure_installed = servers })
+
+    vim.lsp.config('basedpyright', { settings = { basedpyright = { analysis = { typeCheckingMode = "standard" } } } })
+    vim.lsp.config('ruff', { on_attach = function(c) c.server_capabilities.hoverProvider = false end })
+
+    vim.lsp.enable(servers)
+
+    vim.diagnostic.config({
+      virtual_text = false,
+      underline = true,
+      severity_sort = true,
+      float = { border = "rounded", source = "always" },
+    })
+
+    vim.keymap.set('n', 'gl', vim.diagnostic.open_float)
   end
 }
